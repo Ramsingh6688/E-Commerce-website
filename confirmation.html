@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .confirmation_message {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        .order_details {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .home_button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: rgb(252, 220, 37);
+            color: rgb(9, 9, 9);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .material-symbols-outlined {
+            cursor: pointer;
+        }
+        .wishlist-added {
+            color: red;
+        }
+        header {
+            display: flex;
+            background-color: #ffffff;
+            height: 80px;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #d6d1d1;
+        }
+        .PrimeHeaven_home {
+            height: 45px;
+        }
+        .logo_container {
+            margin-left: 4%;
+        }
+        .action_bar {
+            margin-right: 2%;
+        }
+        .nav_bar {
+            display: flex;
+            min-width: 500px;
+            justify-content: space-evenly;
+        }
+        .nav_bar a {
+            font-size: 14px;
+            letter-spacing: .3px;
+            color: #282c3f;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 28px 0;
+            border-bottom: 5px solid #ffffff;
+        }
+        .nav_bar a:hover {
+            border-bottom: 4px solid #f54e77;
+        }
+        .nav_bar a sup {
+            color: rgb(252, 220, 37);
+            font-size: 10px;
+        }
+        .search_bar {
+            height: 40px;
+            min-width: 200px;
+            width: 30%;
+            display: flex;
+            align-items: center;
+        }
+        .search_icon {
+            box-sizing: content-box;
+            height: 20px;
+            padding: 10px;
+            background-color: #f5f5f6;
+            color: #282c3f;
+            font-weight: 300;
+            border-radius: 4px 0 0 4px;
+        }
+        .search_input {
+            color: #696e79;
+            background-color: #f5f5f6;
+            flex-grow: 1;
+            height: 40px;
+            border: 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .action_bar {
+            display: flex;
+            min-width: 200px;
+            justify-content: space-evenly;
+        }
+        .action_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .category_heading {
+            text-transform: uppercase;
+            color: #0b0c0f;
+            letter-spacing: .15em;
+            font-size: 1.8em;
+            margin: 40px 0 10px 30px;
+            max-height: 5em;
+            font-weight: 700;
+        }
+        .banner_container2{
+            margin: 70px 0;
+        }
+        .banner_image2 {
+            width: 100%;
+        }
+        .banner_container11 {
+            margin: 70px 0;
+        }
+        .banner_image11 {
+            width: 100%;
+        }
+        .banner_container12 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner_image12 {
+            width: 100%;
+        }  
+        .main_content {
+            padding: 2%;
+            object-fit: cover;
+        }
+
+        .product_detail {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(255, 253, 253);
+        }
+        .product_image {
+            width: 100%;
+            height: 70%;
+        }
+        .product_name {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .product_price {
+            font-size: 1.5em;
+            color: rgb(252, 220, 37);
+        }
+        .product_description {
+            margin: 20px 0;
+        }
+        .product_size {
+            margin: 20px 0;
+        }
+        .add_to_cart, .buy_now {
+            background-color: rgb(252, 220, 37);
+            color: rgb(10, 10, 10);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .category_heading {
+            text-transform: uppercase;
+            color: #0b0c0f;
+            letter-spacing: .15em;
+            font-size: 1.8em;
+            margin: 40px 0 10px 30px;
+            max-height: 5em;
+            font-weight: 700;
+        }
+        .add_to_cart {
+            background-color: rgb(252, 220, 37);
+            color: rgb(8, 8, 8);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer_container {
+            padding: 30px 0px 40px 0px;
+            background: #FAFBFC;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .footer_column {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer_column h3 {
+            color: #282c3f;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .footer_column a {
+            color: #696b79;
+            font-size: 15px;
+            text-decoration: none;
+            padding-bottom: 5px;
+        }
+        .copyright {
+            color: #94969f;
+            text-align: end;
+            padding: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo_container">
+            <a href="./Homepage.HTML"><img class="PrimeHeaven_home" src="./website logo/Screenshot 2024-07-20 153045.png" alt="PrimeHeaven"></a>
+        </div>
+        <nav class="nav_bar">
+            <a href="./Mens.html" target="_self">Men</a>
+            <a href="./Women.html" target="_blank">Women</a>
+            <a href="./Kids.html" target="_blank">Kids</a>
+            <a href="#">Home & Living</a>
+            <a href="#">Beauty</a>
+            <a href="#">Studio <sup>New</sup></a>
+        </nav>
+        <div class="search_bar">
+            <span class="material-symbols-outlined search_icon">search</span>
+            <input class="search_input" placeholder="Search for products, brands and more">
+        </div>
+        
+    </header>
+    <main>
+        <div class="confirmation_message">
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your purchase. Your order has been placed successfully.</p>
+        </div>
+        <div class="order_details">
+            <h3>Order Details</h3>
+            <p id="orderSummary"></p>
+        </div>
+        <button class="home_button" onclick="redirectToHome()">Go to Home</button>
+    </main>
+    
+    <footer>
+        <div class="footer_container">
+            <div class="footer_column">
+                <h3>ONLINE SHOPPING</h3>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+                <a href="#">Home & Living</a>
+                <a href="#">Beauty</a>
+                <a href="#">Gift Card</a>
+                <a href="#">Myntra Insider</a>
+            </div>
+            <div class="footer_column">
+                <h3>CUSTOMER POLICIES</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQ</a>
+                <a href="#">T&C</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Track Orders</a>
+                <a href="#">Shipping</a>
+                <a href="#">Cancellation</a>
+                <a href="#">Returns</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer_column">
+                <h3>USEFUL LNKS</h3>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+                <a href="#">Site Map</a>
+                <a href="#">Corprate Information</a>
+                <a href="#">Whitehat</a>
+                <a href="#">Cleartrip</a>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            © 2024 www.PrimeHeaven.com. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        function redirectToHome() {
+            window.location.href = "Homepage.HTML";
+        }
+
+        function displayOrderSummary() {
+            const cartItems = JSON.parse(localStorage.getItem("CartItems"));
+            const orderSummary = cartItems.map(item => `${item.title} - $${item.price}`).join('<br>');
+            document.getElementById("orderSummary").innerHTML = orderSummary;
+        }
+
+        // Display order summary on page load
+        displayOrderSummary();
+    </script>
+</body>
+</html>

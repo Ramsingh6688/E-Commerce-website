@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PrimeHeaven - Billing</title>
+    <style>
+        
+        .billing_form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+        .billing_form input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .billing_form button {
+            background-color: rgb(252, 220, 37);
+            color: rgb(7, 7, 7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .cart_item {
+          display: flex;
+          align-items: center;
+          margin: 10px 0;
+          padding: 10px;
+          border: 1px solid #e0e0e0;
+          border-radius: 8px;
+      }
+      #wishlist_count {
+        background-color: rgb(252, 220, 37);
+        color: #080808;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 12px;
+        position: absolute;
+        top: 24px;
+        right: 141px;
+    }
+      .cart_image {
+          width: 100px;
+          height: auto;
+          margin-right: 20px;
+      }
+      .cart_name {
+          flex-grow: 1;
+      }
+      .cart_price {
+          margin-right: 20px;
+      }
+      .remove_button {
+          background-color: rgb(252, 220, 37);
+          color: rgb(11, 11, 11);
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+      .total_container {
+          margin-top: 20px;
+          text-align: right;
+      }
+      .place_order_button {
+          background-color: rgb(252, 220, 37);
+          color: rgb(5, 5, 5);
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+      header {
+        display: flex;
+        background-color: #ffffff;
+        height: 96px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #b6b1b1;
+    }
+    .PrimeHeaven_home {
+        height: 45px;
+    }
+    .logo_container {
+        margin-left: 4%;
+    }
+    .action_bar {
+        margin-right: 2%;
+    }
+    .nav_bar {
+        display: flex;
+        min-width: 500px;
+        justify-content: space-evenly;
+    }
+    .nav_bar a {
+        font-size: 14px;
+        letter-spacing: .3px;
+        color: #282c3f;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 28px 0;
+        border-bottom: 5px solid #ffffff;
+    }
+    .nav_bar a:hover {
+        border-bottom: 4px solid rgb(252, 220, 37);
+    }
+    .nav_bar a sup {
+        color: rgb(252, 220, 37);
+        font-size: 10px;
+    }
+    .search_bar {
+        height: 40px;
+        min-width: 200px;
+        width: 30%;
+        display: flex;
+        align-items: center;
+    }
+    .search_icon {
+        box-sizing: content-box;
+        height: 20px;
+        padding: 10px;
+        background-color: #f5f5f6;
+        color: #282c3f;
+        font-weight: 300;
+        border-radius: 4px 0 0 4px;
+    }
+    .search_input {
+        color: #696e79;
+        background-color: #f5f5f6;
+        flex-grow: 1;
+        height: 40px;
+        border: 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .action_bar {
+        display: flex;
+        min-width: 200px;
+        justify-content: space-evenly;
+    }
+    .action_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .category_heading {
+        text-transform: uppercase;
+        color: #0b0c0f;
+        letter-spacing: .15em;
+        font-size: 1.8em;
+        margin: 40px 0 10px 30px;
+        max-height: 5em;
+        font-weight: 700;
+    }
+    .banner_container2{
+        margin: 70px 0;
+    }
+    .banner_image2 {
+        width: 100%;
+    }
+    .banner_container11 {
+        margin: 70px 0;
+    }
+    .banner_image11 {
+        width: 100%;
+    }
+    .banner_container12 {
+        display: flex;
+        justify-content: space-between;
+    }
+    .banner_image12 {
+        width: 100%;
+    }  
+    .main_content {
+        padding: 2%;
+        object-fit: cover;
+    }
+      .footer_container {
+        padding: 30px 0px 40px 0px;
+        background: #FAFBFC;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .footer_column {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer_column h3 {
+        color: #282c3f;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    .footer_column a {
+        color: #696b79;
+        font-size: 15px;
+        text-decoration: none;
+        padding-bottom: 5px;
+    }
+    .copyright {
+        color: #94969f;
+        text-align: end;
+        padding: 15px;
+    }
+    #CartItems {
+        background-color: rgb(252, 220, 37);
+        color: #010101;
+        border-radius: 50%; 
+        padding: 2px 6px;
+        font-size: 12px;
+        position: absolute;
+        top: 25px;
+        right: 61px;
+    }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo_container">
+        <a href="./Homepage.HTML"><img class="PrimeHeaven_home" src="./website logo/Screenshot 2024-07-20 153045.png" alt="PrimeHeaven"></a>
+    </div>
+    <nav class="nav_bar">
+        <a href="./Mens.html" target="_self">Men</a>
+        <a href="./Women.html" target="_blank">Women</a>
+        <a href="./Kids.html" target="_blank">Kids</a>
+        <a href="#">Home & Living</a>
+        <a href="#">Beauty</a>
+        <a href="#">Studio <sup>New</sup></a>
+    </nav>
+    <div class="search_bar">
+        <span class="material-symbols-outlined search_icon">search</span>
+        <input class="search_input" placeholder="Search for products, brands and more">
+    </div>
+    
+</header>
+    <main>
+        <h2>Billing Information</h2>
+        <form class="billing_form" id="billingForm" onsubmit="return handleBilling(event)">
+            <input type="text" id="cardName" placeholder="Name on Card" required>
+            <input type="text" id="cardNumber" placeholder="Card Number" required>
+            <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" id="cvv" placeholder="CVV" required>
+            <button type="submit">Proceed to Address</button>
+        </form>
+    </main>
+    <footer>
+      <div class="footer_container">
+        <div class="footer_column">
+            <h3>ONLINE SHOPPING</h3>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Home & Living</a>
+            <a href="#">Beauty</a>
+            <a href="#">Gift Card</a>
+            <a href="#">Myntra Insider</a>
+        </div>
+        <div class="footer_column">
+            <h3>CUSTOMER POLICIES</h3>
+
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="#">T&C</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Track Orders</a>
+            <a href="#">Shipping</a>
+            <a href="#">Cancellation</a>
+            <a href="#">Returns</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer_column">
+            <h3>USEFUL LNKS</h3>
+
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Site Map</a>
+            <a href="#">Corprate Information</a>
+            <a href="#">Whitehat</a>
+            <a href="#">Cleartrip</a>
+        </div>
+    </div>
+    <hr>
+    <div class="copyright">
+        © 2024 www.PrimeHeaven.com. All rights reserved.
+    </div>
+    </footer>
+
+
+    <script>
+        function handleBilling(event) {
+            event.preventDefault();
+            // Save billing info to localStorage (optional)
+            localStorage.setItem("BillingInfo", JSON.stringify({
+                cardName: document.getElementById("cardName").value,
+                cardNumber: document.getElementById("cardNumber").value,
+                expiryDate: document.getElementById("expiryDate").value,
+                cvv: document.getElementById("cvv").value
+            }));
+            window.location.href = "confirmation.html";
+        }
+    </script>
+</body>
+</html>
